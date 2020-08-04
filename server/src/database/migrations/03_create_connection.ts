@@ -3,7 +3,7 @@ import Knex from 'knex';
 export async function up(knex: Knex) {
     return knex.schema.createTable('connections', table => {
         table.increments('id').primary();
-        
+
         table.integer('user_id')
             .references('id')
             .inTable('users')
@@ -11,7 +11,9 @@ export async function up(knex: Knex) {
             .onUpdate('CASCADE')
             .notNullable();
 
-        table.timestamp('created_at').defaultTo('now()').notNullable();
+        table.timestamp('created_at')
+            .defaultTo(knex.raw('CURRENT_TIMESTAMP'))
+            .notNullable();
     });
 }
 
