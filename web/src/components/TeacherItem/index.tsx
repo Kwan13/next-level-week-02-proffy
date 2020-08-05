@@ -1,36 +1,58 @@
 import React from 'react';
+import api from '../../services/api';
 
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
 import './styles.css';
 
-function TeacherItem() {
+
+export interface Teacher {
+    avatar: string;
+    bio: string;
+    cost: number;
+    id: number;
+    name: string;
+    subject: string;
+    whatsapp: string;
+};
+
+
+interface TeacherItemProps {
+    teacher: Teacher;
+}
+
+const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
+
+    function createNewConnection() {
+        api.post('connections', {
+            user_id: teacher.id,
+        })
+    }
+
     return (
         <article className="teacher-item">
             <header>
-                <img src="https://avatars0.githubusercontent.com/u/48132571?s=460&u=8d82380bc35f4b0559972b624f33210a713082ad&v=4" alt="Kawan" />
+                <img src={teacher.avatar} alt={teacher.name} />
                 <div>
                     <strong>
-                        Kawan José da Silva
-                            </strong>
-                    <span>Química</span>
+                        {teacher.name}
+                    </strong>
+                    <span>{teacher.subject}</span>
                 </div>
             </header>
 
             <p>
-                Entusiasta das melhores tecnologias de química avançada.
-                        <br /><br />
-                        Apaixonado por explodir coisas em laboratório e por mudar a vida das pessoas através de experiências.
-                    </p>
+                {teacher.bio}
+            </p>
 
             <footer>
                 <p>
                     Preço/hora
-                            <strong>R$ 80,00</strong>
+                    <strong>{Intl.NumberFormat('PT-BR', { style: 'currency', currency: 'BRL' }).format(teacher.cost)}</strong>
                 </p>
-                <button type="button">
+                <a target="_blank" onClick={createNewConnection} href={`https://wa.me/${teacher.whatsapp}`}>
                     <img src={whatsappIcon} alt="Whatsapp" />
-                            Entrar em contato
-                        </button>
+                    Entrar em contato
+                </a>
             </footer>
         </article>
     )
