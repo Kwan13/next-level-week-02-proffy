@@ -3,7 +3,7 @@
 ![Proffy](https://github.com/Kwan13/gifs-projects/blob/master/proffy.gif)
 
 ## Sobre
-Proffy é uma plataforma de estudos online, nela professores se cadastram informando dados básicos como matéria que leciona ,custo por hora/aula e horários disponíveis, assim possíveis alunos porem encontra-los.
+Proffy é uma plataforma de estudos online, nela professores se cadastram informando dados básicos como matéria que leciona ,custo por hora/aula e horários disponíveis, assim possíveis alunos podem encontra-los.
 
 ### Tecnologias utilizadas:
 
