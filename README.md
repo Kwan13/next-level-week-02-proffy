@@ -40,7 +40,7 @@ _**Backend:**_
 _**Front-end:**_
 
 Instalando dependencias:
-1. Acesse o diretório "frontend" via terminal e digite o comando:
+1. Acesse o diretório "web" via terminal e digite o comando:
 	```
 	npm install
 	```
