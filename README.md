@@ -1,6 +1,6 @@
 
 # Proffy
-![Proffy](https://github.com/Kwan13/gifs-projects/blob/master/proffy.gif)
+![Proffy](https://github.com/Kwan13/next-level-week-02-proffy/blob/master/proffy.gif)
 
 ## Sobre
 Proffy é uma plataforma de estudos online, nela professores se cadastram informando dados básicos como matéria que leciona ,custo por hora/aula e horários disponíveis, assim possíveis alunos podem encontra-los.
